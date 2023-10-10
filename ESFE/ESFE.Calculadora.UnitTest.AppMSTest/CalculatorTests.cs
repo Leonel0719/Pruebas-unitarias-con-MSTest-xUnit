@@ -13,26 +13,54 @@ namespace ESFE.Calculadora.Tests
     {
         [TestMethod()]
         public void AddTest()
-        {
-            Assert.Fail();
+        {   
+            //Arrange
+            Calculator calculator = new Calculator();
+
+            //Act
+            double result = calculator.Add(5, 3);
+
+            //Assert
+            Assert.AreEqual(8, result);
         }
 
         [TestMethod()]
         public void SubtractTest()
         {
-            Assert.Fail();
+            Calculator calculator =new Calculator();
+
+            double result = calculator .Subtract(5,3);
+
+            Assert.AreEqual(2, result);
         }
 
         [TestMethod()]
         public void MultiplyTest()
         {
-            Assert.Fail();
+            Calculator calculator = new Calculator ();
+
+            double result = calculator.Multiply(5,3);
+
+            Assert.AreEqual(15, result);
         }
 
         [TestMethod()]
         public void DivideTest()
         {
-            Assert.Fail();
+          Calculator calculator = new Calculator ();
+
+            double result = calculator.Divide(6, 2);
+
+            Assert.AreEqual(3, result);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void DivideByZeroTest()
+        {
+            Calculator calculator = new Calculator();
+
+            double result = calculator.Divide(5, 0);
         }
     }
 }
